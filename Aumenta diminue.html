@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Operadores</title>
+</head>
+<body>
+    <p id= "som"></p>
+    <p id="sub"></p>
+    <p id="mult"></p>
+    <p id= "div"></p>
+    <p id= "res"></p>
+    <p id= "pot"></p>
+    <button onclick="aumenta()">+</button>
+    <button onclick="Diminui()">-</button>
+    <button onclick="Limpa()">Limpa</button>
+</body>
+<footer>
+    <script>
+        var x=0;
+        var y=5;
+        function atualiza(){
+            document.getElementById("som").innerHTML="A soma de "+x+" e "+y+" é "+x+y;
+            document.getElementById("sub").innerHTML="A subtração de "+x+" e "+y+" é "+x-y;
+            document.getElementById("mult").innerHTML="A multiplicação de" +x+" e "+y+" é "+x*y;
+            document.getElementById("div").innerHTML="A divisão de" +x+" e "+y+" é "+x/y;
+            document.getElementById("res").innerHTML="O resto de" +x+" % "+y+" é "+x+y;
+            document.getElementById("pot").innerHTML="Elevado à " +y+" e "+y+" é "+x**y;
+        }
+        function aumenta(){x++;atualiza();}
+        function Diminui(){x--;atualiza();}
+        function Limpa(){x=0;atualiza();}
+    </script>
+</footer>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de dados</title>
+</head>
+<body>
+    <h1>Entrada de Dados</h1>
+    <input type="text" id="nome" placeholder="Digite Seu Nome Completo">
+    <label for="">digite o Ano que você nasceu </label>
+    <input type="date" id="data"><br>
+    <label for="">Sexo</label>
+    <input type="radio" name="Sexo" value="M">Menino
+    <input type="radio" name="Sexo" value="F">feminino
+    <input type="radio" name="Sexo" value="x">Meninx
+    <button onclick="checar ()">Enviar</button> <hr>
+    <div id="Tela"></div>
+</body>
+<footer>
+<Script>
+    let nome="", data="", sexo="" ;
+    function checar(){
+        nome = document.getElementById("Nome").value;
+        data = document.getElementById("data").value;
+        sexo = document.getElementsByName("sexo").value;
+        document.getElementById("tela").innerHTML=
+        "Olá"+nome;" nasceu em "+data;
+    }
+</Script>
+</footer>
+</html>

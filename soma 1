@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremento Decremento</title>
+</head>
+<body>
+    <h1>Incremento Decremento</h1>
+    <p id="tela"></p>
+    <button onclick="adicionar()">+</button>
+    <button onclick="remover()">-</button>
+    <button onclick="limpar()">Limpar</button>
+</body>
+<footer>
+<script>
+    var x=0
+    function adiciona(){x++;document.getElementById("tela").innerHTML=x;}
+    function limpa(){document.getElementById("tela").innerHTML=0;}
+    function remove(){
+
+    }
+</script>
+</footer>
+</html>

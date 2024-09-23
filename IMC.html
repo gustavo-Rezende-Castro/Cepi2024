@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora IMC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+    "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body class="container bg-warning">
+    <h1 class="text-center">Calculadora IMC</h1>
+    
+    <!-- CALCULADORA IMC
+    esse codigo deve pedir o nome do usuario, o peso em kg e a altura em mentros;
+    guardar nome na variavel nome;
+    guardar peso na variavel peso;
+    guardar altura na variavel altura;
+    criar uma variavel chamada imc que vai receber peso/altura **2;
+    criar uma variavel situação para guardar a situação;
+    -->
+    <input class="btn-block" type="text" id="nome" placeholder="Digite seu nome completo"><br>
+    <!-- criar uma caixa de texto para guardar o nome -->
+    <label for="">Digite seu peso em kg</label>
+    <input class="btn-block" type="number" min="0" max="300" id="peso"><br>
+    <!-- cria uma etiqueta e um campo para guardar o peso com minimo 0 e o maximo 300-->
+    <label for=""> digite sua altura em metros </label>
+    <input class="btn-block" type="number" min="0" max="3" id="altura"><br>
+    <!--Crie uma etiqueta e um campo para guardar a altura com o minimo 0 e o maximo 3-->
+    <br>
+    <button class="btn btn-success" onclick="calcular()">Calcular</button>
+    <!--crie um botao que aciona a função calcular()-->
+    <hr><!--cria uma linha na tela-->
+    <div id="tela" class="bg-warning card-body"></div>
+    <!--Cria uma divisão que vai ser usada como tela para mostrar o resultado do imc-->
+</body>
+<footer>
+<script>
+let nome="", peso=0, altura=0, imc=0, situacao="";
+//variaveis para guardar o nome, peso, altura, imc e situação
+function calcular(){
+    nome=document.getElementById("nome").value;
+    peso=document.getElementById("peso").value;
+    altura=document.getElementById("altura").value;
+    imc=peso/altura**2;
+    /*
+    alert(nome);
+    alert(peso);
+    alert(altura);
+    alert(imc);
+    */
+   if(imc>18.5){situacao="baixo peso"}
+   else if(imc>=18.5&&imc<24.9){situacao="peso ideal"}
+   else if(imc>=24.9&&imc<29.9){situacao="sobrepeso"}
+   else if(imc>=24.9&&imc<34.9){situacao="obesidade grau I"}
+   else if(imc>=34.9&&imc<40){situacao="obesidade grau II"}
+   else if(imc>=40&&imc){situacao="obesidade grau III"}
+   else {document.getElementById("tela").innerHTML="Não sei como voce fez isso."}
+   document.getElementById("tela").innerHTML=
+   "Olá "+nome+" seu imc é "+imc.toFixed(2)+" isso significa que voce esta com "+situacao;
+   if(imc<18.5){
+    document.getElementById("tela").innerHTML+=
+    "<br> para atingir o peso ideal voce deve ganhar "+((18.5-imc)*altura**2).toFixed(2)+" kilos"
+    }if(imc>24.9){
+        document.getElementById("tela").innerHTML+=
+    "<br> para atingir o peso ideal voce deve perder "+((imc-24.9)*altura**2).toFixed(2)+" kilos"
+    }
+}
+</script>
+</footer>
+</html>
